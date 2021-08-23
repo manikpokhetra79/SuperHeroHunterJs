@@ -1,8 +1,8 @@
 body{
-    font-size: 16px;
-    font-family: 'Titillium Web', sans-serif;
-    color: white;
-    background: #159957;  /* fallback for old browsers */
+font-size: 16px;
+font-family: 'Titillium Web', sans-serif;
+color: white;
+background: #159957;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #155799, #159957); 
 letter-spacing: 4px;
@@ -46,7 +46,7 @@ header{
 }
 .fa-search{
     position: relative;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     left: 30vw;
     color:#50B95D;
 }
@@ -70,14 +70,16 @@ header{
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
-    width: 150px;
-    height : 200px;
+    width: 200px;
+    height : 250px;
 }
 .hero-details{
 cursor: pointer;
-
 }
 
 .hero-details:hover{
 transform: scale(1.1);
+}
+.fa-heart{
+    color:rgb(255, 166, 0);
 }

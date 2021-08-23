@@ -1,6 +1,9 @@
 let searchInput = document.querySelector('#search-input');
 let srHeading = document.querySelector('#sr-heading');
 let searchResults = document.querySelector('.search-results');
+//variables for fav button
+let ifFav = 'fas';
+let ifNotFav = 'far';
 // accessToken for Api
 let accessToken = '2420549754755473';
 //api url
@@ -28,9 +31,18 @@ let fetchData = async (searchText) => {
     .then(data => renderData(data))
     .catch(error =>  searchResults.innerHTML = '<h3>Superhero with given name not found !!!</h3>')
 }
+// initialize empty array for local storage
 
+function initializeLocalstorage(){
+    let localArray = [];
+    if(localStorage.getItem('superheroes') == null){
+        //create a new localStorage
+        localStorage.setItem('superheroes',JSON.stringify(localArray));
+    }
+}
 //Render Api data on browser
 let renderData = (data)=> {
+    let localArray = JSON.parse(localStorage.getItem('superheroes'));
     if(data.length == 0){
         console.log('Results not found');
     }else{
@@ -39,14 +51,25 @@ let renderData = (data)=> {
           let newDiv = document.createElement('div');
           newDiv.className = 'results';
           newDiv.id = hero.id;
+        //   check id in local storage
+        let isFav ;
+        if(localArray.indexOf( hero.id) != -1){
+            isFav = true;
+        }else{
+            isFav = false;
+        }
+
           newDiv.innerHTML =
           `
           <div class="hero-search">
           <div class="hero-pic">
           <img src="${hero.image.url}">
           </div>
-          <div class="hero-details">
-          <h3 class="get-details" id=${hero.id}>${hero.name}</h3>
+          <div class="hero-details" id=${hero.id}>
+          <h4 class="get-details" >${hero.name}</h4>
+          </div>
+          <div>
+          <i class="${isFav ? 'fas' : 'far'} fa-heart fa-2x fav-btn"></i>
           </div>
           </div>
           `;
@@ -55,12 +78,32 @@ let renderData = (data)=> {
     }  
 }
 
-//Event listener on the SuperHero name
+//Event listener on the SuperHero name and fav button
 searchResults.addEventListener('click',(e)=>{
-    console.log(e.target);
-    let heroId= e.target.id;
-    console.log(heroId);
-    if(e.target.className == 'get-details'){
+
+    if(e.target.className === 'get-details'){
+        let heroId= e.target.parentNode.id;
         window.open(`pages/superhero.html?id=${heroId}`);
+    }else if(e.target.classList.contains('fav-btn')){
+        let heroId =  e.target.parentNode.previousElementSibling.id;
+        let localArray = JSON.parse(localStorage.getItem('superheroes'));
+
+        // if id already exists in localStorage
+        if(localArray.indexOf(heroId) != -1){
+            //remove the id
+            localArray = localArray.filter((item) => item != heroId);
+            localStorage.setItem('superheroes',JSON.stringify(localArray));
+            e.target.classList.remove('fas');
+            e.target.classList.add('far');
+        }else{
+            localArray.push(heroId);
+            localStorage.setItem('superheroes',JSON.stringify(localArray));
+            e.target.classList.remove('far');
+            e.target.classList.add('fas');
+        }
     }
 })
+
+
+//
+document.addEventListener('DOMContentLoaded',initializeLocalstorage);
