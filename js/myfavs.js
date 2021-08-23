@@ -37,7 +37,7 @@ let renderData = (hero)=> {
   }
     newDiv.innerHTML =
     `
-    <div class="hero-search ">
+    <div class="hero-search m-3">
     <div class="hero-pic">
     <img src="${hero.image.url}">
     </div>

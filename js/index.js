@@ -61,7 +61,7 @@ let renderData = (data)=> {
         }
           newDiv.innerHTML =
           `
-          <div class="hero-search ">
+          <div class="hero-search">
           <div class="hero-pic">
           <img src="${hero.image.url}">
           </div>
@@ -69,7 +69,7 @@ let renderData = (data)=> {
           <h4 class="get-details wdiv text-center mt-3" >${hero.name}</h4>
           </div>
           <div class="text-center wdiv mt-3 mb-4">
-          <i class="${isFav ? 'fas' : 'far'} fa-heart fa-2x fav-btn"></i>
+          <i class="${isFav ? 'fas' : 'far'} fa-heart fa-2x fav-btn mb-3"></i>
           </div>
           </div>
           `;
@@ -83,7 +83,7 @@ searchResults.addEventListener('click',(e)=>{
 console.log(e.target.parentNode.id);
     if(e.target.classList.contains('get-details')){
         let heroId= e.target.parentNode.id;
-        window.open(`pages/superhero.html?id=${heroId}`);
+        window.open(`superhero.html?id=${heroId}`);
     }else if(e.target.classList.contains('fav-btn')){
         let heroId =  e.target.parentNode.previousElementSibling.id;
         let localArray = JSON.parse(localStorage.getItem('superheroes'));

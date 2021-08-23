@@ -1,44 +1,49 @@
 body{
 font-size: 16px;
-
-color: white;
-background-image: linear-gradient(to right, #434343 0%, black 100%);
+background: #159957;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #155799, #159957); 
+letter-spacing: 2.5px;
 }
 h2,h3{
     font-family: 'Titillium Web', sans-serif;  
+}
+/* navbar */
+#custom-nav{
+    background-color: #264653 !important;
+    font-size: 1.2rem;
 }
 /* header input */
 #search-input{
     border-radius: 25px;
     border: none;
-    background: #181818;
+    background: #432371;
     height: 1.6rem;
-    width: 50vw;
+    width: 60vw;
     text-align: center;
-    font-size: 1.2rem;
-    color: lightgray;
+    font-size: 1.5rem;
+    color: #F4A261;
+    padding: 1.5rem;
     font-family: 'Titillium Web', sans-serif;
 }
 #search-input:focus{
-    background: #181818;
+    background: #714674;
 }
-
-/* icon */
-.fa-search{
-    position: relative;
-    font-size: 1.1rem;
-    left: 30vw;
-    color:#50B95D;
+#search-input::placeholder{
+    font-size: 1.5rem;
+    color : #F4A261 ;
 }
-
+/* search result heading */
+#sr-heading{
+    color : #f3ba94;
+}
 /* results */
 
 .hero-pic img{
-    border: 1px solid rgb(255, 255, 255);
+    border: 10px solid #432371;
     border-radius: 4px;
-    padding: 5px;
-    width: 200px;
-    height : 250px;
+    width: 250px;
+    height : 300px;
 }
 .hero-details{
 cursor: pointer;
@@ -51,6 +56,6 @@ transform: scale(1.1);
 /* details div styles */
 .wdiv{
     width: 200px;
-    color:rgb(255, 136, 0);
+    color:#FAAE7B;
     font-family: 'Titillium Web', sans-serif;
 }

@@ -1,35 +1,19 @@
 body{
-    font-family: sans-serif; 
-    color :  #fff;
-    text-transform: capitalize;
-    font-family: 'Montserrat', sans-serif;
     letter-spacing: 2.5px;
     background: #159957;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #155799, #159957); 
-    letter-spacing: 4px;
-    box-sizing: border-box;
+    font-family: sans-serif; 
 }
 /* common style classes */
-.container{
-    margin: 1.2rem;
-}
 .headings{
    font-family: 'Titillium Web', sans-serif;
-    color: rgb(255, 166, 0);
+   color: rgb(255, 166, 0);
 }
-/*  row styles*/
-.shero-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-/* Column styles */
-.shero-col{
-    width : 50%;
-    padding : 1.5rem;
-    align-self: flex-start;
+/* navbar */
+#custom-nav{
+    background-color: #264653 !important;
+    font-size: 1.2rem;
 }
 /* superhero image card */
 .card {
@@ -39,7 +23,7 @@ body{
 }
   
 .hero-container{
-    padding: 2px 16px;
+    padding: 6px 16px;
 }
 
 /* text styles */
@@ -47,6 +31,7 @@ body{
     line-height: 1.5rem;
     display: flex;
     align-items: center;
+    color : #fff;
 }
 .key{
     width: 40%;  
@@ -54,13 +39,12 @@ body{
 .key p{
     font-family: 'Titillium Web', sans-serif;
     font-weight: 600;
-    font-size: 16px;
-   
+    font-size: 18px;
 }
 .value{
     width: 60%;  
 }
 .value p{
-    font-size: 14px;
+    font-size: 16px;
    padding: 1.2rem;
 }

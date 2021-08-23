@@ -15,9 +15,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
+        <nav  id="custom-nav" class="navbar navbar-expand-lg navbar-dark bg-dark p-4">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Superhero Hunter</a>
+              <a class="navbar-brand">Superhero Hunter</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -27,48 +27,44 @@
                     <a class="nav-link" aria-current="page" href="/">Homepage</a>
                   </li>   
                   <li class="nav-item">
-                    <li class="nav-link" aria-current="page" href="/pages/myfavs.html">Favourites</li>a>
-                  </li>          
+                    <a class="nav-link" aria-current="page" href="myfavs.html">Favourites</a>
+                  </li>             
                 </ul>
               </div>
             </div>
           </nav>
     </header>
-<div class="container">
-    <div class="shero-container">
+
+    <div class="container d-flex flex-wrap ">
         <!-- container for superhero image,name and bio -->
-        <div class="shero-row">
-          
-            <div class="shero-bio shero-col">
+        <div class="row  mt-5">
+            <div class="shero-bio col-md-6">
                 <h2 class="headings">Biography</h2>
             </div>
-            <div class="shero-iname shero-col">
+            <div class="shero-iname col-md-6">
             </div>
         </div>
         <!-- hero connection powerstats -->
-        <div class="shero-row">
-            
-            <div class="shero-powerstats shero-col">
+        <div class="row mt-3">  
+            <div class="shero-powerstats col-md-6 mt-4">
                 <h2 class="headings">PowerStats</h2>
             </div>
-            <div class="shero-connections shero-col">
+            <div class="shero-connections col-md-6 mt-4">
                 <h2 class="headings">Connection</h2>
-            </div>
-            
-           
+            </div>           
         </div>
         <!-- hero  work appaearance-->
-        <div class="shero-row">
-            <div class="shero-appearance shero-col" >
+        <div class="row">
+            <div class="shero-appearance col-md-6" >
                 <h2 class="headings">Appearance</h2>
             </div>
-            <div class="shero-work shero-col">
+            <div class="shero-work col-md-6">
                 <h2 class="headings">Work</h2>
             </div>
             
         </div>
     </div>
-</div>
+
     <!-- scripts -->
     <script src="../js/superhero.js"></script>
     <!-- bootstrap -->

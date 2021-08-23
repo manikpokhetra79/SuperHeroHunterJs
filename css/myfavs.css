@@ -3,42 +3,44 @@ body{
     color :  #fff;
     text-transform: capitalize;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 2.5px;
     background: #159957;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #155799, #159957); 
-    letter-spacing: 4px;
-    box-sizing: border-box;
+    background: linear-gradient(to right, #155799, #159957);
+    letter-spacing: 2.5px; 
 }
-/* superhero image card */
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 50%;
+/* navbar */
+#custom-nav{
+    background-color: #264653 !important;
+    font-size: 1.2rem;
 }
-  
+
 .hero-container{
     padding: 2px 16px;
 }
-/* results */
 
 .hero-pic img{
-    border: 1px solid rgb(255, 255, 255);
     border-radius: 4px;
-    padding: 5px;
-    width: 200px;
-    height : 250px;
+    width: 100%;
+    height : 300px;
 }
+/* hero name and fav icon styles */
 .hero-details{
 cursor: pointer;
+
+}
+.hero-details:hover{
+    transform: scale(1.1);
+}
+.fas{
+    color: #08ce5b;;
+}
+.fas:hover{
+    cursor: pointer;
 }
 
-.hero-details:hover{
-transform: scale(1.1);
-}
 /* details div styles */
 .wdiv{
     width: 200px;
-    color:rgb(221, 124, 14);
+    color:#FAAE7B;
     font-family: 'Titillium Web', sans-serif;
 }
