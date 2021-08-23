@@ -29,7 +29,7 @@ let fetchData = async (heroId)=>{
     .catch(error => console.log(error));
 }
 let renderData = (hero) => {
-console.log(hero);
+// console.log(hero);
 //render superhero image and name
 document.querySelector('.shero-iname').innerHTML =`
 <div class="card">

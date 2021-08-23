@@ -40,6 +40,7 @@ function initializeLocalstorage(){
         localStorage.setItem('superheroes',JSON.stringify(localArray));
     }
 }
+
 //Render Api data on browser
 let renderData = (data)=> {
     let localArray = JSON.parse(localStorage.getItem('superheroes'));
