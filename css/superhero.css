@@ -4,6 +4,7 @@ body{
     background: -webkit-linear-gradient(to right, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #155799, #159957); 
     font-family: sans-serif; 
+    box-sizing: border-box;
 }
 /* common style classes */
 .headings{
@@ -31,10 +32,11 @@ body{
     line-height: 1.5rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color : #fff;
 }
 .key{
-    width: 40%;  
+    width: 35%;  
 }
 .key p{
     font-family: 'Titillium Web', sans-serif;
@@ -42,9 +44,9 @@ body{
     font-size: 18px;
 }
 .value{
-    width: 60%;  
+    width: 50%;  
 }
 .value p{
     font-size: 16px;
-   padding: 1.2rem;
+ 
 }
