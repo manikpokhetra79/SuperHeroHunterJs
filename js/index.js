@@ -29,7 +29,7 @@ let fetchData = async (searchText) => {
     await fetch(url+searchText)
     .then(res => res.json())
     .then(data => renderData(data))
-    .catch(error =>  searchResults.innerHTML = '<h3>Superhero with given name not found !!!</h3>')
+    .catch(error =>  searchResults.innerHTML = '<h3 class="mt-4 text-info">Superhero with given name not found !!!</h3>')
 }
 // initialize empty array for local storage
 
@@ -49,7 +49,7 @@ let renderData = (data)=> {
         searchResults.innerHTML = '';
         for(let hero of data.results){
           let newDiv = document.createElement('div');
-          newDiv.className = 'results';
+          newDiv.className = 'results col-lg-3 col-md-4 col-sm-6';
           newDiv.id = hero.id;
         //   check id in local storage
         let isFav ;
@@ -58,17 +58,16 @@ let renderData = (data)=> {
         }else{
             isFav = false;
         }
-
           newDiv.innerHTML =
           `
-          <div class="hero-search">
+          <div class="hero-search ">
           <div class="hero-pic">
           <img src="${hero.image.url}">
           </div>
           <div class="hero-details" id=${hero.id}>
-          <h4 class="get-details" >${hero.name}</h4>
+          <h4 class="get-details wdiv text-center mt-3" >${hero.name}</h4>
           </div>
-          <div>
+          <div class="text-center wdiv mt-3 mb-4">
           <i class="${isFav ? 'fas' : 'far'} fa-heart fa-2x fav-btn"></i>
           </div>
           </div>
@@ -80,8 +79,8 @@ let renderData = (data)=> {
 
 //Event listener on the SuperHero name and fav button
 searchResults.addEventListener('click',(e)=>{
-
-    if(e.target.className === 'get-details'){
+console.log(e.target.parentNode.id);
+    if(e.target.classList.contains('get-details')){
         let heroId= e.target.parentNode.id;
         window.open(`pages/superhero.html?id=${heroId}`);
     }else if(e.target.classList.contains('fav-btn')){
