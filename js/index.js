@@ -95,11 +95,13 @@ console.log(e.target.parentNode.id);
             localStorage.setItem('superheroes',JSON.stringify(localArray));
             e.target.classList.remove('fas');
             e.target.classList.add('far');
+            alert('Removed from favourites...');
         }else{
             localArray.push(heroId);
             localStorage.setItem('superheroes',JSON.stringify(localArray));
             e.target.classList.remove('far');
             e.target.classList.add('fas');
+            alert('Added to favourites...');
         }
     }
 })
